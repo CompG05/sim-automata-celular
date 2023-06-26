@@ -23,40 +23,36 @@ El DEVS que representa a una célula está definido como
 
 donde
 \begin{itemize}
-  \item $X = \{0,1\} \times \{0 \dots 7\} \cup \{\text{(actualizar, 8)}\}$
+  \item $X = \{-1, 1, \text{actualizar}\}$
 
-    Desde el puerto 0 hasta el 7 se recibe el valor de los vecinos. El puerto 8 recibe la solicitud de actualizar.
+    Una entrada de -1 indica la muerte de un vecino, una entrada de 1 indica el nacimiento de un vecino y una entrada de \textit{actualizar} indica que se debe actualizar el estado de la célula.
 
-  \item $Y = \{0,1\}$
+  \item $Y = \{-1,1\}$
 
-    Tiene una única salida que indica el estado de la célula.
+    Indica si la célula muere o nace. Si el estado no cambia, no hay salida.
 
-  \item $S = \{0,1\} \times Bool \times V \times V \times \mathbb{R}_0^+$
+  \item $S = \{-1,1\} \times \{-1,1\} \times \mathbb{R}^+ \times \mathbb{R}_0^+$
 
-    El estado de la célula es una tupla $(s, b, va, vn, \sigma)$ donde
+    El estado de la célula es una tupla $(s, ns, v, \sigma)$ donde
     \begin{itemize}
-      \item $s \in \{0,1\}$ es el estado actual de la célula.
-      \item $b \in Bool$ indica si el vecindario cambió en el último paso.
-      \item $va \in V$ (\textit{vecinos anteriores}) es el estado del vecindario en el último paso.
-      \item $vn \in V$ (\textit{vecinos nuevos}) es el estado del vecindario actual.
-      \item $\sigma \in \mathbb{R}_0^+$ es el tiempo de la próxima actualización.
+      \item $s$ es el estado actual de la célula
+      \item $ns$ es el estado siguiente de la célula
+      \item $v$ es la cantidad de vecinos vivos
+      \item $\sigma$ es el tiempo hasta el cambio de estado
     \end{itemize}
 
-  \item $\dext((s, b, va, vn, \sigma), e, (x,p)) = \begin{cases}
-    (s, True, va, vn', \sigma) & \text{si } p \in \{0\dots 7\} \\
-    (s, b, va, vn, \sigma)     & \text{si } b = False \\
-    (s', False, vn, vn, 0) & \text{si } p = 8 \text{ y } b = True
+  \item $\dext((s, ns, v, \sigma), e, x)) = \begin{cases}
+      (s, ns', v+x, \sigma) & \text{si } x \in \{-1,1\} \\
+      (s, ns, v, 0) & \text{si } x = \text{actualizar}
     \end{cases}$
 
-    $vn' = \text{modificar}(vn, p, x)$
+    $ns' = \text{nuevoEstado}(s, v+x)$
 
-    $s' = \text{calcular}(s, va)$
+  \item $\dint((s, ns, v, \sigma)) = (ns, ns, v, \sigma)$
 
-  \item $\dint((s, b, va, vn, \sigma)) = (s, b, va, vn, \infty)$
+  \item $\lambda((s, ns, v, \sigma)) = s$
 
-  \item $\lambda((s, b, va, vn, \sigma)) = s$
-
-  \item $ta((s, b, va, vn, \sigma)) = \sigma$
+  \item $ta((s, ns, v, \sigma)) = \sigma$
 \end{itemize}
 
 
