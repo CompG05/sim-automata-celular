@@ -23,36 +23,39 @@ El DEVS que representa a una célula está definido como
 
 donde
 \begin{itemize}
-  \item $X = \{-1, 1, \text{actualizar}\}$
+  \item $X = \{0, 1\} \times \{0, \dots, 8\}$
 
-    Una entrada de -1 indica la muerte de un vecino, una entrada de 1 indica el nacimiento de un vecino y una entrada de \textit{actualizar} indica que se debe actualizar el estado de la célula.
+    La entrada por el puerto 8 es un par $(b, 8)$ donde $b$ es 0 o 1, e indica qué acción tomará la célula.
 
-  \item $Y = \{-1,1\}$
+    La entrada por los puertos 0 a 7 es un par $(b, i)$ donde $b$ es 0 o 1, e indica si la $i$-ésima célula vecina está viva o muerta.
 
-    Indica si la célula muere o nace. Si el estado no cambia, no hay salida.
+  \item $Y = \{0, 1\}$
 
-  \item $S = \{-1,1\} \times \{-1,1\} \times \mathbb{R}^+ \times \mathbb{R}_0^+$
+    La salida es 1 si la célula está viva, 0 si está muerta.
 
-    El estado de la célula es una tupla $(s, ns, v, \sigma)$ donde
-    \begin{itemize}
-      \item $s$ es el estado actual de la célula
-      \item $ns$ es el estado siguiente de la célula
-      \item $v$ es la cantidad de vecinos vivos
-      \item $\sigma$ es el tiempo hasta el cambio de estado
-    \end{itemize}
+  \item $S = \{0, 1\} \times \{0, \dots, 8\} \times \mathbb{R}_0^+$
 
-  \item $\dext((s, ns, v, \sigma), e, x)) = \begin{cases}
-      (s, ns', v+x, \sigma) & \text{si } x \in \{-1,1\} \\
-      (s, ns, v, 0) & \text{si } x = \text{actualizar}
+    El estado es un par $(b, n, \sigma)$ donde $b$ es 0 o 1, e indica si la célula está viva o muerta; $n$ es un entero entre 0 y 8, e indica la cantidad de células vecinas vivas; y $\sigma$ es un número real no negativo, e indica el tiempo que falta para que la célula cambie de estado.
+
+  \item $\dint((b, n, \sigma)) = (b, n, \infty)$
+
+    Una vez que la célula produce su salida, se queda esperando a la siguiente solicitud de acción.
+
+  \item $\dext((b, n, \sigma)) = \begin{cases}
+      (s, v', \sigma) & p \in \{0, \dots, 7\} \\
+      (s, n, 0) & p = 1 \land x = 0 \\
+      (s', n, \infty) & p = 1 \land x = 1
     \end{cases}$
 
-    $ns' = \text{nuevoEstado}(s, v+x)$
+    En el primer caso, al recibir una señal de una célula vecina, se actualiza la cantidad de células vecinas vivas.
 
-  \item $\dint((s, ns, v, \sigma)) = (ns, ns, v, \sigma)$
+    En el segundo caso, al recibir una señal de acción `0', se produce la salida del estado actual.
 
-  \item $\lambda((s, ns, v, \sigma)) = s$
+    En el tercer caso, al recibir una señal de acción `1', se actualiza el estado de la célula dependiendo del estado actual y de la cantidad de vecinas vivas.
 
-  \item $ta((s, ns, v, \sigma)) = \sigma$
+  \item $\lambda((b, n, \sigma)) = b$
+
+  \item $ta((b, n, \sigma)) = \sigma$
 \end{itemize}
 
 
