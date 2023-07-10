@@ -1,0 +1,2190 @@
+Coupled
+    {
+    Type = Root
+    Name = vida4x8
+    Ports = 0; 0
+    Description = 
+    Graphic
+        {
+        Position = 0; 0
+        Dimension = 600; 600
+        Direction = Right
+        Color = 15
+        Icon = 
+        Window = 5000; 5000; 5000; 5000
+        }
+    Parameters
+        {
+        }
+    System
+        {
+        Atomic
+            {
+            Name = Celula0
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -9180 ; -6510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 0 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula1
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -7155 ; -6510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 1 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula8
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -9180 ; -4260
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 8 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula9
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -7155 ; -4260
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 9 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula2
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -4980 ; -6510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 2 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula3
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -2955 ; -6510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 3 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula10
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -4980 ; -4260
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 10 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula11
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -2955 ; -4260
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 11 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula16
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -9180 ; -2235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 16 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula17
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -7155 ; -2235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 17 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula24
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -9180 ; 15
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 24 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula25
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -7155 ; 15
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 25 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula18
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -4980 ; -2235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 18 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula19
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -2955 ; -2235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 19 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula26
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -4980 ; 15
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 26 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula27
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -2955 ; 15
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 27 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula4
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -705 ; -6510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 4 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula5
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 1170 ; -6510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 5 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula12
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -705 ; -4260
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 12 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula13
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 1170 ; -4260
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 13 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula6
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 3345 ; -6510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 6 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula7
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 5370 ; -6510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 7 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula14
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 3345 ; -4260
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 14 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula15
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 5370 ; -4260
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 15 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula20
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -705 ; -2235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 20 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula21
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 1170 ; -2235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 21 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula28
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -705 ; 15
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 28 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula29
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 1170 ; 15
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 29 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula22
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 3345 ; -2235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 22 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula23
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 5370 ; -2235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 23 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula30
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 3345 ; 15
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 30 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Celula31
+            Ports = 1 ; 1
+            Path = vida/celula.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 5370 ; 15
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                id = Val; 31 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Escritor
+            Ports = 1 ; 0
+            Path = vida/escritor.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = 8820 ; -3180
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                FName = Str; output.csv ; 
+                n_celulas = Val; 8 ; 
+                }
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  2 ;  1 ; -1
+            PointX = -8400 ; -7290 ; -7290
+            PointY = -6150 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -7290
+            PointY = -6150 ; -6150 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  2 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = -6150 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  3 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -9315 ; -9315
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  2 ;  1 ; 0
+            Sink = Cmp ;  3 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  2 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -6375 ; -7875 ; -7875 ; -7290
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -9315 ; -9315
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  2 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -7290
+            PointY = -3900 ; -3900 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -8400 ; -7290 ; -7290
+            PointY = -3900 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  2 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -7875 ; -7875 ; -7290
+            PointY = -3900 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  3 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -6375 ; -9315 ; -9315
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = -3900 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
+            PointX = -4200 ; -4200 ; -3090
+            PointY = -6150 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  6 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = -4200 ; -4200 ; -3090
+            PointY = -3900 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -3090
+            PointY = -3900 ; -3900 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  6 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -3675 ; -3675 ; -3090
+            PointY = -6150 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -5115 ; -5115
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -3090
+            PointY = -6150 ; -6150 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  6 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = -6150 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -3675 ; -3675 ; -3090
+            PointY = -3900 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -5115 ; -5115
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  2 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
+            PointX = -6375 ; -5115 ; -5115
+            PointY = -6150 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  2 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -5115 ; -5115
+            PointY = -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  2 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -5115 ; -5115
+            PointY = -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -5115
+            PointY = -3900 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  2 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; 8685
+            PointY = -6150 ; -6150 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  2 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -6375 ; -6375 ; 8685
+            PointY = -6150 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; 8685
+            PointY = -6150 ; -6150 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  6 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -2175 ; 8685
+            PointY = -6150 ; -6150 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; 8685
+            PointY = -3900 ; -3900 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -6375 ; 8685
+            PointY = -3900 ; -3900 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; 8685
+            PointY = -3900 ; -3900 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -2175 ; -2175 ; 8685
+            PointY = -3900 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  11 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -7290
+            PointY = 375 ; 375 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  15 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  16 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -3090
+            PointY = -1875 ; -1875 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Cmp ;  15 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -5115
+            PointY = 375 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  15 ;  1 ; 0
+            Sink = Cmp ;  13 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -5115 ; -5115
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  11 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -9315 ; -9315
+            PointY = -1875 ; -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  15 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  15 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -5115 ; -5115
+            PointY = -1875 ; -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  9 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = -1875 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  16 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -3675 ; -3675 ; -3090
+            PointY = -1875 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  13 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -5115
+            PointY = -1875 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  11 ;  1 ; 0
+            Sink = Cmp ;  9 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -9315 ; -9315
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  15 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -5115 ; -5115
+            PointY = -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -3675 ; -3675 ; -3090
+            PointY = 375 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  12 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -7875 ; -7875 ; -7290
+            PointY = -1875 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  11 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  15 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -3090
+            PointY = 375 ; 375 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  15 ;  1 ; 0
+            Sink = Cmp ;  12 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = 375 ; 375 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  1 ; 0
+            Sink = Cmp ;  13 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  12 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = -1875 ; -1875 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Cmp ;  9 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Cmp ;  13 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -5115 ; -5115
+            PointY = 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Cmp ;  11 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = 375 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  15 ;  1 ; 0
+            Sink = Cmp ;  16 ;  1 ; -1
+            PointX = -4200 ; -4200 ; -3090
+            PointY = 375 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -8400 ; -8400 ; -7290
+            PointY = -1875 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  12 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -7290
+            PointY = -1875 ; -1875 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = -4200 ; -4200 ; -3090
+            PointY = -1875 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -7875 ; -7875 ; -7290
+            PointY = 375 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  1 ; 0
+            Sink = Cmp ;  15 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = 375 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  11 ;  1 ; 0
+            Sink = Cmp ;  12 ;  1 ; -1
+            PointX = -8400 ; -8400 ; -7290
+            PointY = 375 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = -1875 ; -1875 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  13 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = -1875 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  9 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -9315 ; -9315
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -7290
+            PointY = -3900 ; -3900 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  9 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -7875 ; -7875 ; -7290
+            PointY = -3900 ; -2850 ; -2850 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  13 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -6375 ; -5115
+            PointY = -3900 ; -3900 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  13 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -5115 ; -5115
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -3090
+            PointY = -3900 ; -3900 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  13 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -2175 ; -3675 ; -3675 ; -3090
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  3 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -9315 ; -9315
+            PointY = -1875 ; -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; -7290
+            PointY = -1875 ; -1875 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  3 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -9315 ; -9315
+            PointY = -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -6375 ; -6375 ; -7875 ; -7875 ; -7290
+            PointY = -1875 ; -2850 ; -2850 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -6375 ; -5115 ; -5115
+            PointY = -1875 ; -1875 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -7875 ; -7875 ; -7290
+            PointY = -1875 ; -1875 ; -2850 ; -2850 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -5115 ; -5115
+            PointY = -1875 ; -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; -3090
+            PointY = -1875 ; -1875 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -5115 ; -5115
+            PointY = -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -3675 ; -3675 ; -3090
+            PointY = -1875 ; -2850 ; -2850 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; 8685
+            PointY = -1875 ; -1875 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -6375 ; -6375 ; 8685
+            PointY = -1875 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; 8685
+            PointY = -1875 ; -1875 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -2175 ; -2175 ; 8685
+            PointY = -1875 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  11 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -8400 ; -7875 ; -7875 ; 8685
+            PointY = 375 ; 375 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -6375 ; -6375 ; 8685
+            PointY = 375 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  15 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -4200 ; -3675 ; -3675 ; 8685
+            PointY = 375 ; 375 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -2175 ; 8685
+            PointY = 375 ; 375 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  18 ;  1 ; 0
+            Sink = Cmp ;  21 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 3210
+            PointY = -6150 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  22 ;  1 ; 0
+            Sink = Cmp ;  23 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  20 ;  1 ; -1
+            PointX = 75 ; 75 ; 1035
+            PointY = -3900 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  18 ;  1 ; 0
+            Sink = Cmp ;  20 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 600 ; 600 ; 1035
+            PointY = -6150 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  32 ;  1 ; 0
+            Sink = Cmp ;  31 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = 375 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  18 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 1035
+            PointY = -3900 ; -3900 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  27 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -840 ; -840
+            PointY = -1875 ; -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  23 ;  1 ; -1
+            PointX = 1950 ; 3210 ; 3210
+            PointY = -1875 ; -1875 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  32 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 5235
+            PointY = -1875 ; -1875 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  28 ;  1 ; 0
+            Sink = Cmp ;  25 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 1950 ; -840 ; -840
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  18 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  24 ;  1 ; 0
+            Sink = Cmp ;  22 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 4650 ; 4650 ; 5235
+            PointY = -3900 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  26 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  20 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = -1875 ; -1875 ; -2850 ; -2850 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  17 ;  1 ; 0
+            Sink = Cmp ;  19 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -840 ; -840
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  24 ;  1 ; -1
+            PointX = 4125 ; 4125 ; 5235
+            PointY = -3900 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  22 ;  1 ; 0
+            Sink = Cmp ;  24 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 4650 ; 4650 ; 5235
+            PointY = -6150 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  30 ;  1 ; 0
+            Sink = Cmp ;  23 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  21 ;  1 ; 0
+            Sink = Cmp ;  23 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 3210 ; 3210
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  28 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 600 ; 600 ; 1035
+            PointY = -1875 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  26 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = -1875 ; -1875 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  30 ;  1 ; 0
+            Sink = Cmp ;  32 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 4650 ; 4650 ; 5235
+            PointY = -1875 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  23 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 3210 ; 3210
+            PointY = -1875 ; -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  24 ;  1 ; 0
+            Sink = Cmp ;  23 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = -3900 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  21 ;  1 ; 0
+            Sink = Cmp ;  18 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  31 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 3210 ; 3210
+            PointY = -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  30 ;  1 ; 0
+            Sink = Cmp ;  31 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  28 ;  1 ; 0
+            Sink = Cmp ;  31 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 3210
+            PointY = 375 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  23 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 3210
+            PointY = -3900 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  20 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 1035
+            PointY = -1875 ; -1875 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  27 ;  1 ; 0
+            Sink = Cmp ;  26 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 1035
+            PointY = 375 ; 375 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  20 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  21 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 3210 ; 3210
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  30 ;  1 ; 0
+            Sink = Cmp ;  29 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = -1875 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  30 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 5235
+            PointY = -3900 ; -3900 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  32 ;  1 ; 0
+            Sink = Cmp ;  29 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  30 ;  1 ; 0
+            Sink = Cmp ;  24 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 4650 ; 4650 ; 5235
+            PointY = -1875 ; -2850 ; -2850 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  27 ;  1 ; 0
+            Sink = Cmp ;  25 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -840 ; -840
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  30 ;  1 ; -1
+            PointX = 4125 ; 4125 ; 5235
+            PointY = -1875 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  31 ;  1 ; 0
+            Sink = Cmp ;  29 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 3210 ; 3210
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  18 ;  1 ; 0
+            Sink = Cmp ;  17 ;  1 ; -1
+            PointX = 1950 ; 1950 ; -840 ; -840
+            PointY = -6150 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  26 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 1035
+            PointY = -3900 ; -3900 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  18 ;  1 ; 0
+            Sink = Cmp ;  23 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 3210 ; 3210
+            PointY = -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  17 ;  1 ; 0
+            Sink = Cmp ;  18 ;  1 ; -1
+            PointX = 75 ; 75 ; 1035
+            PointY = -6150 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  18 ;  1 ; 0
+            Sink = Cmp ;  19 ;  1 ; -1
+            PointX = 1950 ; 1950 ; -840 ; -840
+            PointY = -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  17 ;  1 ; 0
+            Sink = Cmp ;  20 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 1035
+            PointY = -6150 ; -6150 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  24 ;  1 ; 0
+            Sink = Cmp ;  30 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 4650 ; 4650 ; 5235
+            PointY = -3900 ; -2850 ; -2850 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  22 ;  1 ; 0
+            Sink = Cmp ;  21 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = -6150 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  25 ;  1 ; -1
+            PointX = 1950 ; 1950 ; -840 ; -840
+            PointY = -1875 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  27 ;  1 ; -1
+            PointX = 1950 ; 1950 ; -840 ; -840
+            PointY = -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  19 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -840 ; -840
+            PointY = -1875 ; -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  19 ;  1 ; -1
+            PointX = 1950 ; 1950 ; -840 ; -840
+            PointY = -3900 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  28 ;  1 ; 0
+            Sink = Cmp ;  26 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 1950 ; 600 ; 600 ; 1035
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  22 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 5235
+            PointY = -3900 ; -3900 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  24 ;  1 ; 0
+            Sink = Cmp ;  29 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  17 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -840 ; -840
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  31 ;  1 ; 0
+            Sink = Cmp ;  32 ;  1 ; -1
+            PointX = 4125 ; 4125 ; 5235
+            PointY = 375 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  29 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 3210
+            PointY = -1875 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  18 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 600 ; 600 ; 1035
+            PointY = -3900 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  29 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 3210 ; 3210
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  31 ;  1 ; 0
+            Sink = Cmp ;  30 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 5235
+            PointY = 375 ; 375 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  26 ;  1 ; -1
+            PointX = 75 ; 75 ; 1035
+            PointY = -1875 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  28 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = -1875 ; -1875 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  24 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 5235
+            PointY = -1875 ; -1875 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  20 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 600 ; 600 ; 1035
+            PointY = -1875 ; -2850 ; -2850 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  27 ;  1 ; 0
+            Sink = Cmp ;  28 ;  1 ; -1
+            PointX = 75 ; 75 ; 1035
+            PointY = 375 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  25 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -840 ; -840
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  28 ;  1 ; 0
+            Sink = Cmp ;  29 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 1950 ; 3210 ; 3210
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  28 ;  1 ; 0
+            Sink = Cmp ;  27 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 1950 ; -840 ; -840
+            PointY = 375 ; 375 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  21 ;  1 ; 0
+            Sink = Cmp ;  24 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 5235
+            PointY = -6150 ; -6150 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  31 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 3210 ; 3210
+            PointY = -1875 ; -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  32 ;  1 ; 0
+            Sink = Cmp ;  30 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 4650 ; 4650 ; 5235
+            PointY = 375 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  21 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 3210 ; 3210
+            PointY = -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  31 ;  1 ; 0
+            Sink = Cmp ;  26 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  24 ;  1 ; 0
+            Sink = Cmp ;  21 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 3210 ; 3210
+            PointY = -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  28 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 1035
+            PointY = -1875 ; -1875 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  21 ;  1 ; 0
+            Sink = Cmp ;  20 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  25 ;  1 ; -1
+            PointX = 1950 ; 1950 ; -840 ; -840
+            PointY = -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  26 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 600 ; 600 ; 1035
+            PointY = -3900 ; -2850 ; -2850 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  17 ;  1 ; -1
+            PointX = 1950 ; 1950 ; -840 ; -840
+            PointY = -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  29 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 3210
+            PointY = -3900 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  21 ;  1 ; 0
+            Sink = Cmp ;  22 ;  1 ; -1
+            PointX = 4125 ; 4125 ; 5235
+            PointY = -6150 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  31 ;  1 ; 0
+            Sink = Cmp ;  28 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 600 ; 600 ; 1035
+            PointY = 375 ; 375 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  6 ;  1 ; 0
+            Sink = Cmp ;  17 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -840
+            PointY = -6150 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  19 ;  1 ; -1
+            PointX = 1950 ; 1950 ; -840 ; -840
+            PointY = -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  6 ;  1 ; 0
+            Sink = Cmp ;  19 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -2175 ; -840 ; -840
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  17 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  17 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = -6150 ; -6150 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  17 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -840 ; -840
+            PointY = -3900 ; -4950 ; -4950 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  19 ;  1 ; -1
+            PointX = -2175 ; -840 ; -840
+            PointY = -3900 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -6150 ; -6150
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = -3900 ; -3900 ; -4950 ; -4950 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  19 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -840 ; -840
+            PointY = -1875 ; -2850 ; -2850 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  25 ;  1 ; -1
+            PointX = -2175 ; -840 ; -840
+            PointY = -1875 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  27 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -840 ; -840
+            PointY = -1875 ; -675 ; -675 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = -1875 ; -1875 ; -2850 ; -2850 ; -3900 ; -3900
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = -1875 ; -1875 ; -2850 ; -2850 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  16 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = -1875 ; -1875 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  25 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -2175 ; -840 ; -840
+            PointY = -3900 ; -3900 ; -2850 ; -2850 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  1 ; 0
+            Sink = Cmp ;  25 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -840 ; -840
+            PointY = 375 ; -675 ; -675 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  1 ; 0
+            Sink = Cmp ;  27 ;  1 ; -1
+            PointX = -2175 ; -840 ; -840
+            PointY = 375 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  27 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = 375 ; 375 ; -675 ; -675 ; -1875 ; -1875
+            }
+        Line
+            {
+            Source = Cmp ;  27 ;  1 ; 0
+            Sink = Cmp ;  16 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; -3675 ; -3675 ; -3090
+            PointY = 375 ; 375 ; -675 ; -675 ; 375 ; 375
+            }
+        Line
+            {
+            Source = Cmp ;  17 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 8685
+            PointY = -6150 ; -6150 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  18 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 8685
+            PointY = -6150 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  21 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 8685
+            PointY = -6150 ; -6150 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  22 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 8685
+            PointY = -6150 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  19 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 8685
+            PointY = -3900 ; -3900 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  20 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 8685
+            PointY = -3900 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  23 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 8685
+            PointY = -3900 ; -3900 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  24 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 8685
+            PointY = -3900 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  25 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 8685
+            PointY = -1875 ; -1875 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  26 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 8685
+            PointY = -1875 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  29 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 8685
+            PointY = -1875 ; -1875 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  30 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 8685
+            PointY = -1875 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  27 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 75 ; 600 ; 600 ; 8685
+            PointY = 375 ; 375 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  28 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 1950 ; 1950 ; 8685
+            PointY = 375 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  31 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 4125 ; 4650 ; 4650 ; 8685
+            PointY = 375 ; 375 ; -2850 ; -2850
+            }
+        Line
+            {
+            Source = Cmp ;  32 ;  1 ; 0
+            Sink = Cmp ;  33 ;  1 ; -1
+            PointX = 6150 ; 6150 ; 8685
+            PointY = 375 ; -2850 ; -2850
+            }
+        }
+    }
