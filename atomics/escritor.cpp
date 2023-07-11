@@ -7,22 +7,38 @@ FName=va_arg(parameters, char*);
 Sigma=0;
 FOutput = PDFileOpen(FName, 'w');
 
-std::string parametros[4];
 std::ifstream archivo;
-std::string nombre_archivo = "../atomics/vida/estado.txt";
+std::string nombre_archivo = "../sim-automata-celular/estado.txt";
 archivo.open(nombre_archivo.data());
 
 if (!archivo.is_open())
 	std::cerr << "No se pudo abrir el archivo " << nombre_archivo << "\n";
 
-for (int i = 0; i < 4; i++) {
-	if (!getline(archivo, parametros[i])) {
-		std::cerr << "Error al leer el archivo\n";
-	}
+std::string buffer;
+getline(archivo, buffer);
+int filas = buffer[0] - '0';
+
+getline(archivo, buffer);
+int columnas = buffer[0] - '0';
+
+tablero = "";
+for (int i = 0; i < filas; i++) {
+	getline(archivo, buffer);
+	tablero += buffer;
 }
 
-tablero = parametros[0];
-intervalo = atof(parametros[3].data());
+// Saltar las líneas de las reglas
+getline(archivo, buffer);
+getline(archivo, buffer);
+
+
+// Inicializar intervalo
+getline(archivo, buffer);
+intervalo = atof(buffer.data());
+
+archivo.close();
+
+intervalo = atof(buffer.data());
 
 archivo.close();
 }

@@ -3,9 +3,8 @@ void celula::init(double t,...) {
 va_list parameters;
 va_start(parameters, t);
 
-std::string parametros[4];
 std::ifstream archivo;
-std::string nombre_archivo = "../atomics/vida/estado.txt";
+std::string nombre_archivo = "../sim-automata-celular/estado.txt";
 
 archivo.open(nombre_archivo.data());
 
@@ -13,31 +12,41 @@ if (!archivo.is_open()) {
 	std::cerr << "No se pudo abrir el archivo " << nombre_archivo << "\n";
 }
 
-for (int i = 0; i < 4; i++) {
-	if (!getline(archivo, parametros[i])) {
-		std::cerr << "Error al leer el archivo\n";
-	}
+std::string buffer;
+getline(archivo, buffer);
+int filas = buffer[0] - '0';
+
+getline(archivo, buffer);
+int columnas = buffer[0] - '0';
+
+std::string tablero = "";
+for (int i = 0; i < filas; i++) {
+	getline(archivo, buffer);
+	tablero += buffer;
 }
 
-archivo.close();
-
 // Inicializar reglas
-n_r_supervivencia = parametros[1].length();
+getline(archivo, buffer);
+n_r_supervivencia = buffer.length();
 for (int i = 0; i < n_r_supervivencia; i++)
-	r_supervivencia[i] = parametros[1][i] - '0';
+	r_supervivencia[i] = buffer[i] - '0';
 
-n_r_nacimiento = parametros[2].length();
+getline(archivo, buffer);
+n_r_nacimiento = buffer.length();
 for (int i = 0; i < n_r_nacimiento; i++)
-	r_nacimiento[i] = parametros[2][i] - '0';
+	r_nacimiento[i] = buffer[i] - '0';
 
 
 // Inicializar intervalo
-intervalo = atof(parametros[3].data());
+getline(archivo, buffer);
+intervalo = atof(buffer.data());
+
+archivo.close();
 
 
 // Inicializar atributos del estado
 id = va_arg(parameters, double);
-estado = 0.0 + (parametros[0][(int)id] - '0'); // Obtener valor entero, sumarle 0.0 para convertir a double
+estado = 0.0 + (tablero[(int)id] - '0'); // Obtener valor entero, sumarle 0.0 para convertir a double
 vecindario_cambio = 1;
 instante = 0;	// 0 para comunicar y producir salida, 1 para actualizar
 vecinos_vivos = 0;

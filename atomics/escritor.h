@@ -15,8 +15,6 @@ class escritor: public Simulator {
 double Sigma;
 long int FOutput;
 
-double filas, columnas;
-
 std::string tablero;
 double intervalo;
 
