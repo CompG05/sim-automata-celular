@@ -1,12 +1,18 @@
 \documentclass[12pt]{article}
 
-\usepackage[spanish]{babel}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\graphicspath{{./imagenes/}}
 
 \newcommand{\dint}{\delta_{\text{int}}}
 \newcommand{\dext}{\delta_{\text{ext}}}
+\newcommand{\estado}{(id, s, vv, vc, pa, \sigma)}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
 
 \title{Título}
 \author{D'Autilio Joel, Rossi Pablo}
@@ -22,41 +28,113 @@ El DEVS que representa a una célula está definido como
 \[ C = \langle X, Y, S, \dint, \dext, \lambda, ta \rangle \]
 
 donde
+
 \begin{itemize}
-  \item $X = \{0, 1\} \times \{0, \dots, 8\}$
+  \item $X = \N \times \{0,1\}$
 
-    La entrada por el puerto 8 es un par $(b, 8)$ donde $b$ es 0 o 1, e indica qué acción tomará la célula.
+    La entrada es un par $(id, s)$ que indica que el vecino con ese id nació ($s=1$) o murió ($s=0$).
 
-    La entrada por los puertos 0 a 7 es un par $(b, i)$ donde $b$ es 0 o 1, e indica si la $i$-ésima célula vecina está viva o muerta.
+  \item $Y = \big[ (\N \times \{0,1\}) \times \{0\} \big] \cup \{(0, 1)\}$
 
-  \item $Y = \{0, 1\}$
+    La salida es de la forma $((id, s), 0)$ ó $(0, 1)$.
 
-    La salida es 1 si la célula está viva, 0 si está muerta.
+    Por el puerto 0 se emite el par $(id, s)$ con el id y estado actuales de la célula.
 
-  \item $S = \{0, 1\} \times \{0, \dots, 8\} \times \mathbb{R}_0^+$
+    El puerto 1 se usa para descartar la salida cuando el estado de la célula no cambió.
 
-    El estado es un par $(b, n, \sigma)$ donde $b$ es 0 o 1, e indica si la célula está viva o muerta; $n$ es un entero entre 0 y 8, e indica la cantidad de células vecinas vivas; y $\sigma$ es un número real no negativo, e indica el tiempo que falta para que la célula cambie de estado.
+  % S = (id, estado, vecinosVivos, vecindarioCambio, proximaAccion, sigma)
+  \item $S = \N \times \{0, 1\} \times \N \times Bool \times \{Comunicar, Actualizar\} \times \R_0^+$
 
-  \item $\dint((b, n, \sigma)) = (b, n, \infty)$
+    El estado es una tupla $(id, s, vv, vc, pa, \sigma)$ donde
 
-    Una vez que la célula produce su salida, se queda esperando a la siguiente solicitud de acción.
+    \begin{itemize}
+      \item $id \in \N$ es el identificador de la célula.
+      \item $s \in \{0, 1\}$ es el estado actual de la célula.
+      \item $vv \in \N$ es la cantidad de vecinos vivos.
+      \item $vc \in Bool$ indica si el vecindario cambió en el último paso.
+      \item $pa \in \{Comunicar, Actualizar\}$ indica la próxima acción a realizar.
+      \item $\sigma \in \R_0^+$ es el tiempo restante para realizar la próxima acción.
+    \end{itemize}
 
-  \item $\dext((b, n, \sigma)) = \begin{cases}
-      (s, v', \sigma) & p \in \{0, \dots, 7\} \\
-      (s, n, 0) & p = 1 \land x = 0 \\
-      (s', n, \infty) & p = 1 \land x = 1
+  \item $\dint(\estado) = \begin{cases}
+      (id, s, vv, vc, Act, I/2) & pa = Com \\
+      (id, s, vv, F, Act, I) & pa = Act \land \lnot vc \\
+      (id, s, vv, F, Act, I) & pa = Act \land vc \land s = s' \\
+      (id, s', vv, F, Com, I/2) & pa = Act \land vc \land s \neq s'
     \end{cases}$
 
-    En el primer caso, al recibir una señal de una célula vecina, se actualiza la cantidad de células vecinas vivas.
+    donde $s' = \text{calcularEstado}(s, vv)$
 
-    En el segundo caso, al recibir una señal de acción `0', se produce la salida del estado actual.
+  \item $\dext(\estado, e, (id, x)) = (id, s, vv', vc, pa, \sigma - e)$
 
-    En el tercer caso, al recibir una señal de acción `1', se actualiza el estado de la célula dependiendo del estado actual y de la cantidad de vecinas vivas.
+    donde $vv' = \begin{cases}
+      vv + 1 & x = 1 \\
+      vv - 1 & x = 0
+    \end{cases}$
 
-  \item $\lambda((b, n, \sigma)) = b$
+  \item $\lambda(\estado) = \begin{cases}
+      ((id, s), 0) & pa = Comunicar \\
+      (0, 1) & pa = Actualizar
+    \end{cases}$
 
-  \item $ta((b, n, \sigma)) = \sigma$
+  \item $ta(\estado) = \sigma$
 \end{itemize}
 
+Consideramos a los parámetros $I \in \R^+$, que representa el tiempo entre estados del tablero, y $RS, RN \subset \N$ que representan a las reglas de supervivencia y nacimiento respectivamente. También utilizamos la función calcularEstado$()$ que es el próximo estado de una célula dado su estado actual y el número de vecinos vivos.
+
+\[ \text{calcularEstado}(s, vv) = \begin{cases}
+  1 & s = 1 \land vv \in RS \\
+  1 & s = 0 \land vv \in RN \\
+  0 & \text{en otro caso}
+\end{cases}\]
+
+
+\section{Implementación en PowerDEVS}
+
+
+Una célula del tablero se implementa a través de un modelo DEVS atómico que incluye un parámetro para el id, una entrada y una salida, como se puede ver en la figura~\ref{img:celula}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{imagenes/celula.png}
+  \caption{Modelo atómico de una célula.}\label{img:celula}
+\end{figure}
+
+Una célula se comunica con sus vecinas a través de sus puertos de entrada y salida, como se observa en la figura~\ref{img:conexiones}. Por su puerto de entrada, a lo sumo 8 vecinas le comunican sus cambios de estado (fig. \ref{img:coneciones_entrada}) y por su puerto de salida les comunica cuando cambia el suyo (fig. \ref{img:coneciones_salida}).
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{imagenes/entrada}
+    \caption{Conexiones de entrada.}
+    \label{img:coneciones_entrada}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{imagenes/salida}
+    \caption{Conexiones de salida.}
+    \label{img:coneciones_salida}
+  \end{subfigure}
+  \caption{Conexiones de una célula con sus vecinas.}
+  \label{img:conexiones}
+\end{figure}
+
+En la figura \ref{img:tablero} se observa un tablero completo de 4x4 con las conexiones mencionadas anteriormente. Además, cada célula se comunica con un DEVs atómico `Escritor' que se encarga de escribir los resultados de una simulación en un archivo.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.75\textwidth]{imagenes/tablero.png}
+  \caption{Tablero de 4x4.}
+  \label{img:tablero}
+\end{figure}
+
+
+\subsection{Flujo de evolución}
+
+Cada célula, obtiene su estado inicial, las reglas de supervivencia y nacimiento, y el tiempo entre estados, a través de un archivo de configuración. De la misma manera, el Escritor obtiene el estado inicial del tablero y el tiempo entre estados del mismo archivo.
+
+La simulación consta de dos etapas: una de \textit{Comunicación} y una de \textit{Actualización}. En la primera, cada célula comunica su estado a las vecinas y se escribe en un archivo de salida el estado actual del tablero. En la segunda, cada una actualiza su estado.
+
+Para optimizar este proceso, se lleva una variable $vc \in Bool$ que indica si el vecindario cambió desde la última actualización. Si una célula está en la etapa de Actualización y $vc = F$ entonces no es necesario actualizar su estado, y por lo tanto tampoco es necesario comunicarlo a sus vecinas. Además, si el vecindario sí cambió ($vc = T$) pero el estado resultante es el mismo, tampoco es necesario comunicarlo. En estos casos, la célula no pasa por la etapa de Comunicación hasta que su estado cambie.
 
 \end{document}
