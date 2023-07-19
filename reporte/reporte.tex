@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 
 \usepackage[margin=1in]{geometry}
+\usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{caption}
@@ -14,7 +15,8 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 
-\title{Título}
+\title{Juego de la Vida\\
+\large~Trabajo práctico para Simulación}
 \author{D'Autilio Joel, Rossi Pablo}
 \date{}
 
@@ -22,6 +24,31 @@
 \maketitle
 
 \section{Especificación DEVS}
+
+
+\subsection{Idea intuitiva}
+
+
+El modelo DEVS que representa al juego de la vida es un acoplado de células que se comunican entre sí. Cada célula tiene un estado que puede ser vivo o muerto, y se actualiza en cada paso de la simulación. Las células se comunican con sus vecinas para conocer sus estados y así poder calcular el suyo.
+
+Llamese $I$ al tiempo entre estados del juego. Queremos que cada $I$ segundos cada célula comunique su nuevo estado y se guarde el tablero. Para esto, siguen un ciclo de dos pasos que llamaremos \textit{Comunicar} y \textit{Actualizar} (fig.~\ref{img:timeline}).
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/timeline}
+  \caption{Ciclo de comunicación y actualización de una célula. En los puntos verdes, la célula comunica su estado a sus vecinas y se guarda el tablero. En los puntos intermedios amarillos, la célula actualiza su estado de acuerdo a las reglas del juego y al estado de sus vecinas.}\label{img:timeline}
+\end{figure}
+
+\begin{itemize}
+  \item \textit{Comunicar}: la célula comunica su estado actual a sus vecinas y guarda en una variable interna el estado de su vecindario. Ocurre cada $I$ segundos comenzando por $t = 0$.
+  \item \textit{Actualizar}: la célula actualiza su estado de acuerdo a dicha variable y a las reglas del juego. Ocurre cada $I$ segundos comenzando por $t = I/2$.
+\end{itemize}
+
+El fin de dividir el intervalo en dos subintervalos es separar las acciones de comunicar y actualizar para asegurar que cuando una célula calcule su nuevo estado todas sus vecinas le hayan comunicado el suyo.
+
+
+\subsection{Formalización}
+
 
 El DEVS que representa a una célula está definido como
 
@@ -38,7 +65,7 @@ donde
 
     La salida es de la forma $((id, s), 0)$ ó $(0, 1)$.
 
-    Por el puerto 0 se emite el par $(id, s)$ con el id y estado actuales de la célula.
+    Por el puerto 0 se emite el par $(id, s)$ con el id y estado actual de la célula.
 
     El puerto 1 se usa para descartar la salida cuando el estado de la célula no cambió.
 
@@ -63,9 +90,15 @@ donde
       (id, s', vv, F, Com, I/2) & pa = Act \land vc \land s \neq s'
     \end{cases}$
 
-    donde $s' = \text{calcularEstado}(s, vv)$
+    donde $s' = \text{calcularEstado}(s, vv)$.
 
-  \item $\dext(\estado, e, (id, x)) = (id, s, vv', vc, pa, \sigma - e)$
+    En este punto, $pa$ es la acción a realizar en el instante actual. Si ésta es \textit{Comunicar}, se reinicia el reloj interno y la próxima acción será \textit{Actualizar}.
+
+    Si la acción es \textit{Actualizar} y el próximo estado es el mismo que el actual (casos 2 y 3) se evita la acción de \textit{Comunicar} estableciendo el reloj en $I$ y la $pa = Actualizar$.
+
+    Por último, si el próximo estado es distinto del actual (caso 4), se establece la próxima acción en $Comunicar$ y se reinicia el reloj interno.
+
+  \item $\dext(\estado, e, (id, x)) = (id, s, vv', T, pa, \sigma - e)$
 
     donde $vv' = \begin{cases}
       vv + 1 & x = 1 \\
@@ -77,10 +110,12 @@ donde
       (0, 1) & pa = Actualizar
     \end{cases}$
 
+    La célula produce una salida sólo en el caso de que la acción sea \textit{Comunicar}; si la acción es \textit{Actualizar} no ocurre una salida. Para simular esto, utilizamos el puerto 1 como descarte.
+
   \item $ta(\estado) = \sigma$
 \end{itemize}
 
-Consideramos a los parámetros $I \in \R^+$, que representa el tiempo entre estados del tablero, y $RS, RN \subset \N$ que representan a las reglas de supervivencia y nacimiento respectivamente. También utilizamos la función calcularEstado$()$ que es el próximo estado de una célula dado su estado actual y el número de vecinos vivos.
+Consideramos a los parámetros $I \in \R^+$, que representa el tiempo entre estados del tablero, y $RS, RN \subseteq \N$ que representan a las reglas de supervivencia y nacimiento respectivamente. También utilizamos la función calcularEstado$()$ que es el próximo estado de una célula dado su estado actual y el número de vecinos vivos.
 
 \[ \text{calcularEstado}(s, vv) = \begin{cases}
   1 & s = 1 \land vv \in RS \\
@@ -100,32 +135,28 @@ Una célula del tablero se implementa a través de un modelo DEVS atómico que i
   \caption{Modelo atómico de una célula.}\label{img:celula}
 \end{figure}
 
-Una célula se comunica con sus vecinas a través de sus puertos de entrada y salida, como se observa en la figura~\ref{img:conexiones}. Por su puerto de entrada, a lo sumo 8 vecinas le comunican sus cambios de estado (fig. \ref{img:coneciones_entrada}) y por su puerto de salida les comunica cuando cambia el suyo (fig. \ref{img:coneciones_salida}).
+Una célula se comunica con sus vecinas a través de sus puertos de entrada y salida, como se observa en la figura~\ref{img:conexiones}. Por su puerto de entrada, a lo sumo 8 vecinas le comunican sus cambios de estado (fig.~\ref{img:coneciones_entrada}) y por su puerto de salida les comunica cuando cambia el suyo (fig.~\ref{img:coneciones_salida}).
 
 \begin{figure}[ht]
   \centering
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{imagenes/entrada}
-    \caption{Conexiones de entrada.}
-    \label{img:coneciones_entrada}
+    \caption{Conexiones de entrada.}\label{img:coneciones_entrada}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{imagenes/salida}
-    \caption{Conexiones de salida.}
-    \label{img:coneciones_salida}
+    \caption{Conexiones de salida.}\label{img:coneciones_salida}
   \end{subfigure}
-  \caption{Conexiones de una célula con sus vecinas.}
-  \label{img:conexiones}
+  \caption{Conexiones de una célula con sus vecinas.}\label{img:conexiones}
 \end{figure}
 
-En la figura \ref{img:tablero} se observa un tablero completo de 4x4 con las conexiones mencionadas anteriormente. Además, cada célula se comunica con un DEVs atómico `Escritor' que se encarga de escribir los resultados de una simulación en un archivo.
+En la figura~\ref{img:tablero} se observa un tablero completo de 4$\times$4 con las conexiones mencionadas anteriormente. Además, cada célula se comunica con un DEVs atómico `Escritor' que se encarga de escribir los resultados de una simulación en un archivo.
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.75\textwidth]{imagenes/tablero.png}
-  \caption{Tablero de 4x4.}
-  \label{img:tablero}
+  \caption{Tablero de 4$\times$4.}\label{img:tablero}
 \end{figure}
 
 
