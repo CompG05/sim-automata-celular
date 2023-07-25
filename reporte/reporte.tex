@@ -59,7 +59,7 @@ donde
 \begin{itemize}
   \item $X = \N \times \{0,1\}$
 
-    La entrada es un par $(id, s)$ que indica que el vecino con ese id nació ($s=1$) o murió ($s=0$).
+    La entrada es un par $(id, s)$ que indica que el vecino con ese id nació ($s=1$) o murió ($s=0$). El $id$ no es utilizado por la célula pero sirve para la escritura del tablero a un archivo.
 
   \item $Y = \big[ (\N \times \{0,1\}) \times \{0\} \big] \cup \{(0, 1)\}$
 
@@ -67,7 +67,7 @@ donde
 
     Por el puerto 0 se emite el par $(id, s)$ con el id y estado actual de la célula.
 
-    El puerto 1 se usa para descartar la salida cuando el estado de la célula no cambió.
+    El puerto 1 se usa para simular una salida condicional, ya que cuando se produce una transición interna en el paso \textit{Actualizar} no se espera una salida.
 
   % S = (id, estado, vecinosVivos, vecindarioCambio, proximaAccion, sigma)
   \item $S = \N \times \{0, 1\} \times \N \times Bool \times \{Comunicar, Actualizar\} \times \R_0^+$
