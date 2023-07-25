@@ -61,6 +61,7 @@ Notar que las dimensiones del archivo deben coincidir con las del modelo a utili
 
 #### Patrones
 El directorio [patrones/](patrones) contiene archivos de configuración inicial de diferentes patrones. Para utilizarlos se deben copiar reemplazando al archivo [estado.txt](estado.txt). Por ejemplo:
+    
     cp patrones/8x8/naves/nave_ligera.txt estado.txt
 
 ### Salida producida
