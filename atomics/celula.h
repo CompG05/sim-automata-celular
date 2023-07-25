@@ -12,9 +12,7 @@
 
 
 class celula: public Simulator { 
-// Declare the state,
-// output variables
-// and parameters
+// Atributos del estado
 double id;
 double estado;
 int instante;
@@ -22,14 +20,15 @@ int vecindario_cambio;
 int vecinos_vivos;
 double sigma;
 
+// Parametros de reglas e intervalo
 double intervalo;
 int r_supervivencia[8];
 int n_r_supervivencia;
 int r_nacimiento[8];
 int n_r_nacimiento;
 
+// Arreglo de salida
 double y[2];
-
 public:
 	celula(const char *n): Simulator(n) {};
 	void init(double, ...);

@@ -12,9 +12,9 @@
 
 
 class escritor: public Simulator { 
+// Atributos del escritor
 double Sigma;
 long int FOutput;
-
 std::string tablero;
 double intervalo;
 
