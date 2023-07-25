@@ -1,12 +1,15 @@
 import argparse
-from matplotlib import pyplot as plt
 import math
 import time
+import matplotlib.pyplot as plt
 
 VIVO = " ■ "
 MUERTO = " - "
 
-def imprimir_estado_consola(board):
+def imprimir_estado(tiempo, board):
+    board = como_matriz(board)
+    print(f"Tiempo: {tiempo}")
+
     print("-", end='')
     for x in range(len(board[0])):
         print("---", end='')
@@ -26,10 +29,26 @@ def imprimir_estado_consola(board):
     return 0
 
 
-def imprimir_estado(board):
-    plt.figure(figsize=(15, 15))
-    plt.imshow(board)
-    plt.show()
+def plotear(tiempo, estado):
+    estado = como_matriz(estado)
+
+    # Obtener las dimensiones de la matriz
+    filas = len(estado)
+    columnas = len(estado[0])
+
+    # Graficar la matriz utilizando imshow
+    plt.imshow(estado, cmap='binary')
+
+    # Dibujar líneas de cuadrícula
+    plt.hlines([i - 0.5 for i in range(filas + 1)], xmin=-0.5, xmax=columnas - 0.5, colors='black', linewidth=1)
+    plt.vlines([i - 0.5 for i in range(columnas + 1)], ymin=-0.5, ymax=filas - 0.5, colors='black', linewidth=1)
+
+    # Eliminar los números de los ejes
+    plt.xticks([])
+    plt.yticks([])
+
+    # Agregar título al gráfico
+    plt.title(f"Tiempo: {tiempo}")
 
 
 def como_matriz(estado):
@@ -58,47 +77,48 @@ def leer_archivo(nombre_archivo):
 
 def main():
     #Parseo de argumentos
-    parser = argparse.ArgumentParser(prog='Imprimir_Estados', description='Impresión de estados del juego de la vida',
+    parser = argparse.ArgumentParser(prog='imprimir_Estados', description='Impresión de estados del juego de la vida',
                                      epilog='Simulación 2023')
     parser.add_argument('-m', '--manual', action='store_true', help="Comando manual para obtener el siguiente estado (default: tiempo de simulación)")
-    parser.add_argument('-p', '--plot', action='store_true', help="Opción para graficar con matplotlib (default: por consola)")
-    parser.add_argument("-a", "--archivo",
+    parser.add_argument('-c', '--consola', action='store_true', help="Opción para graficar por consola (default: por matplotlib)")
+    parser.add_argument("archivo",
                         action="store",
-                        default="output.csv",
-                        help="Archivo de entrada con estados del juego de la vida (default: output.csv)")
+                        help="Archivo de entrada con estados del juego de la vida")
     args = parser.parse_args()
 
     #Lectura del archivo e impresión de estados
     tiempos, estados = leer_archivo(args.archivo)
-    tiempos_estados = zip(tiempos, estados)
+    tiempos_estados = list(zip(tiempos, estados))
+    espera = tiempos[1]
 
     if args.manual:
-        for tiempo, estado in tiempos_estados:
-            print(f"Tiempo: {tiempo}")
-            if args.plot:
-                imprimir_estado(como_matriz(estado))
-            else:
-                imprimir_estado_consola(como_matriz(estado))
-            input()
-    else:
-        tiempo_anterior = 0
-        if args.plot:
-            fig, ax = plt.subplots()
+        if args.consola:
+
+            # Manual y por consola
             for tiempo, estado in tiempos_estados:
-                ax.clear()
-                ax.set_title("Juego de la vida")
-                ax.imshow(como_matriz(estado), cmap='binary')
-                plt.pause(tiempo - tiempo_anterior)
-                ax.set_aspect('equal')
-                tiempo_anterior = tiempo
-            plt.show()
+                imprimir_estado(tiempo, estado)
+                input()
         else:
+
+            # Manual y por matplotlib
             for tiempo, estado in tiempos_estados:
-                time.sleep(tiempo - tiempo_anterior)
-                print(f"Tiempo: {tiempo}")
-                imprimir_estado_consola(como_matriz(estado))
-                print()
-                tiempo_anterior = tiempo
+                plotear(tiempo, estado)
+                plt.show()
+
+    elif args.consola:
+
+        # Automático y por consola
+        for tiempo, estado in tiempos_estados:
+            time.sleep(espera)
+            imprimir_estado(tiempo, estado)
+
+    else:
+
+        # Automático y por matplotlib
+        for tiempo, estado in tiempos_estados:
+            plt.pause(espera)
+            plotear(tiempo, estado)
+        plt.show()
 
 
 if __name__ == '__main__':
