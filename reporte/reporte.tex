@@ -37,7 +37,7 @@ El juego de la vida es un autómata celular diseñado por John Horton Conway en 
   \item Si una célula está muerta, puede ``nacer'' en la siguiente generación si tiene exactamente tres vecinos vivos.
 \end{itemize}
 
-Si bien estas son las reglas originales propuestas por Conway, existen variaciones que se expresan comúnmente en formato X/Y, donde X e Y son enteros. La parte X representa las reglas de nacimiento, mientras que la parte Y representa las reglas de supervivencia. Por ejemplo, la regla 23/36 indica que una célula nacerá si tiene 2 o 3 vecinos vivos y sobrevivirá si tiene exactamente 3 o 6 vecinos vivos. En el caso del Juego de la Vida propuesto por Conway, las reglas son 3/23. En la figura~\ref{img:ej1} se muestra una posible secuencia con estas últimas reglas.
+Si bien estas son las reglas originales propuestas por Conway, existen variaciones que se expresan comúnmente en formato X/Y, donde X e Y son enteros. La parte X representa las reglas de supervivencia, mientras que la parte Y representa las reglas de nacimiento. Por ejemplo, la regla 23/36 indica que una célula sobrevivirá si tiene 2 o 3 vecinos vivos y nacerá si tiene exactamente 3 o 6 vecinos vivos. En el caso del Juego de la Vida propuesto por Conway, las reglas son 23/3. En la figura~\ref{img:ej1} se muestra una posible secuencia con estas últimas reglas.
 
 \begin{figure}
   \centering
@@ -86,7 +86,7 @@ donde
 
     La entrada es un par $(id, s)$ que indica que el vecino con ese id nació ($s=1$) o murió ($s=0$). El $id$ no es utilizado por la célula pero sirve para la escritura del tablero a un archivo.
 
-  \item $Y = \big[ (\N \times \{0,1\}) \times \{0\} \big] \cup \{(0, 1)\}$
+  \item $Y = \big[\N \times \{0,1\} \times \{0\} \big] \cup \{(0, 1)\}$
 
     La salida es de la forma $((id, s), 0)$ ó $(0, 1)$.
 
@@ -117,7 +117,7 @@ donde
 
     donde $s' = \text{calcularEstado}(s, vv)$.
 
-    En este punto, $pa$ es la acción a realizar en el instante actual. Si ésta es \textit{Comunicar}, se reinicia el reloj interno y la próxima acción será \textit{Actualizar}.
+    En este punto, $pa$ es la acción a realizar en el instante actual. Si ésta es \textit{Comunicar}, se reinicia el reloj interno, la próxima acción será \textit{Actualizar} y se actualiza el estado.
 
     Si la acción es \textit{Actualizar} y el próximo estado es el mismo que el actual (casos 2 y 3) se evita la acción de \textit{Comunicar} estableciendo el reloj en $I$ y la $pa = Actualizar$.
 
@@ -202,11 +202,11 @@ Para optimizar este proceso, se lleva una variable $vc \in Bool$ que indica si e
 En el juego de la vida de Conway, se pueden observar una amplia variedad de patrones que emergen a medida que las células interactúan entre sí y evolucionan a lo largo de las generaciones. Estos patrones pueden clasificarse en diferentes categorías, que pueden visualizarse en la sección \ref{sec:graficas}:
 
 \begin{itemize}
-  \item Patrones estáticos: (fig.~\ref{img:estatico1}-\ref{img:estatico3}) Son patrones que permanecen inalterados a medida que avanzan las generaciones. Estas configuraciones de células forman estructuras estables y no experimentan cambios en su forma o posición. Algunos ejemplos de patrones estáticos son el bloque, que consiste en un grupo de células en forma de cuadrado, y el barco, que consta de una cruz sin centro y una célula adicional en una esquina. También existen otros patrones estáticos como la canoa, la serpiente o la colmena.
+  \item Patrones estáticos: (fig.~\ref{img:estatico1}-\ref{img:estatico3}) Son patrones que permanecen inalterados a medida que avanzan las generaciones. Estas configuraciones de células forman estructuras estables y no experimentan cambios en su forma o posición. Algunos ejemplos de patrones estáticos son el bloque (fig.~\ref{img:estatico1}), que consiste en un grupo de células en forma de cuadrado, y el barco (fig.~\ref{img:estatico2}), que consta de una cruz sin centro y una célula adicional en una esquina. También existen otros patrones estáticos como la canoa, la serpiente o la colmena (fig.~\ref{img:estatico3}).
 
-  \item Osciladores: (fig.~\ref{img:oscilante1}-\ref{img:oscilante4}) Son patrones que cambian periódicamente entre dos o más estados diferentes. Estos patrones oscilan entre diferentes configuraciones a medida que las generaciones avanzan, pero eventualmente vuelven a su estado inicial. Ejemplos de osciladores incluyen el intermitente, el sapo y el tocino, que alternan entre dos estados en un ciclo constante. También se encuentran otros patrones con un ciclo más largo, como el patrón gema que tiene un ciclo de 5 pasos.
+  \item Osciladores: (fig.~\ref{img:oscilante1}-\ref{img:oscilante4}) Son patrones que cambian periódicamente entre dos o más estados diferentes. Estos patrones oscilan entre diferentes configuraciones a medida que las generaciones avanzan, pero eventualmente vuelven a su estado inicial. Ejemplos de osciladores incluyen el intermitente (fig.~\ref{img:oscilante1}), el sapo (fig.~\ref{img:oscilante2}) y el tocino (fig.~\ref{img:oscilante3}), que alternan entre dos estados en un ciclo constante. También se encuentran otros patrones con un ciclo más largo, como el patrón gema (fig.~\ref{img:oscilante4}) que tiene un ciclo de 5 pasos.
 
-  \item Naves espaciales: (fig.~\ref{img:nave1}-\ref{img:nave4}) Son patrones que se mueven a través de la cuadrícula a medida que evolucionan. Estos patrones exhiben un comportamiento dinámico mientras mantienen su forma relativa. Las células individuales se desplazan y cambian de posición a medida que avanzan las generaciones. Dentro de los ejemplos de naves espaciales se encuentra el planeador, que se desplaza diagonalmente a través de una cuadrícula, así como las naves espaciales que se desplazan en línea recta, como la nave ligera, la nave de peso medio y la nave pesada.
+  \item Naves espaciales: (fig.~\ref{img:nave1}-\ref{img:nave4}) Son patrones que se mueven a través de la cuadrícula a medida que evolucionan. Estos patrones exhiben un comportamiento dinámico mientras mantienen su forma relativa. Las células individuales se desplazan y cambian de posición a medida que avanzan las generaciones. Dentro de los ejemplos de naves espaciales se encuentra el planeador (fig.~\ref{img:nave1}), que se desplaza diagonalmente a través de una cuadrícula, así como las naves espaciales que se desplazan en línea recta, como la nave ligera (fig.~\ref{img:nave2}), la nave de peso medio (fig.~\ref{img:nave3}) y la nave pesada (fig.~\ref{img:nave4}).
 \end{itemize}
 
 
