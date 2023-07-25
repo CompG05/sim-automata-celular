@@ -61,6 +61,7 @@ Notar que las dimensiones del archivo deben coincidir con las del modelo a utili
 
 #### Patrones
 El directorio [patrones/](patrones) contiene archivos de configuración inicial de diferentes patrones. Para utilizarlos se deben copiar reemplazando al archivo [estado.txt](estado.txt). Por ejemplo:
+    
     cp patrones/8x8/naves/nave_ligera.txt estado.txt
 
 ### Salida producida
@@ -93,10 +94,13 @@ El script permite visualizar la secuencia de estados tanto en consola como a tra
 #### Ejemplos de Visualización
 
 Mostrar los tableros con matplotlib
+    
     python imprimir_estados.py ../output/output.csv
 
 Mostrar los tableros por consola
+    
     python imprimir_estados.py ../output/output.csv -c
 
 Mostrar los tableros por consola con avance manual
+    
     python imprimir_estados.py ../output/output.csv -cm
