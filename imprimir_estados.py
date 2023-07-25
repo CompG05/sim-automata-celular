@@ -3,29 +3,30 @@ import math
 import time
 import matplotlib.pyplot as plt
 
-VIVO = " ■ "
-MUERTO = " - "
+VIVO = "██"
+MUERTO = "  "
+LINEA = "─" * len(VIVO)
 
 def imprimir_estado(tiempo, board):
     board = como_matriz(board)
     print(f"Tiempo: {tiempo}")
 
-    print("-", end='')
+    print("┌", end='')
     for x in range(len(board[0])):
-        print("---", end='')
-    print("-")
+        print(LINEA, end='')
+    print("┐")
     for x in range(len(board)):
-        print("|", end='')
+        print("│", end='')
         for y in range(len(board[x])):
             if board[x][y] == 0:
                 print(MUERTO, end='')
             else:
                 print(VIVO, end='')
-        print("|")
-    print("-", end='')
+        print("│")
+    print("└", end='')
     for x in range(len(board[0])):
-        print("---", end='')
-    print("-")
+        print(LINEA, end='')
+    print("┘")
     return 0
 
 
@@ -109,15 +110,15 @@ def main():
 
         # Automático y por consola
         for tiempo, estado in tiempos_estados:
-            time.sleep(espera)
             imprimir_estado(tiempo, estado)
+            time.sleep(espera)
 
     else:
 
         # Automático y por matplotlib
         for tiempo, estado in tiempos_estados:
-            plt.pause(espera)
             plotear(tiempo, estado)
+            plt.pause(espera)
         plt.show()
 
 
