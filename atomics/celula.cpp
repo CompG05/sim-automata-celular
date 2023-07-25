@@ -46,12 +46,21 @@ archivo.close();
 
 // Inicializar atributos del estado
 id = va_arg(parameters, double);
-estado = 0.0 + (tablero[(int)id] - '0'); // Obtener valor entero, sumarle 0.0 para convertir a double
-vecindario_cambio = 1;
-instante = 0;	// 0 para comunicar y producir salida, 1 para actualizar
 vecinos_vivos = 0;
-sigma = 0;
-es_primera_iter = 1;
+estado = 0.0 + (tablero[(int)id] - '0'); // Obtener valor entero, sumarle 0.0 para convertir a double
+
+// En la primera iteración se inicializa la variable vecinos_vivos como la cantidad de vecinos vivos
+// Los que tienen estado inicial 'vivo' lo comunican a sus vecinos para que incrementen la variable
+// Los que están muertos pasan a la siguiente acción sin comunicar
+if (estado == 0.0) {
+	instante = 1; // Pasar a actualizar
+	sigma = intervalo / 2;
+} else {
+	instante = 0;	// 0 para comunicar y producir salida, 1 para actualizar
+	sigma = 0;
+}
+
+vecindario_cambio = 1;
 }
 double celula::ta(double t) {
 //This function returns a double.
@@ -59,9 +68,6 @@ return sigma;
 }
 void celula::dint(double t) {
 if (instante == 1) {
-    if (es_primera_iter)
-        es_primera_iter = 0;
-    
     if (!vecindario_cambio)
         sigma = intervalo;
     
@@ -120,7 +126,7 @@ double estado_vecino = value[1];
 if (estado_vecino == 1) {
 	vecinos_vivos++;
 } 
-else if (!es_primera_iter) {
+else {
 	vecinos_vivos--;
 }
 

@@ -28,7 +28,6 @@ int n_r_supervivencia;
 int r_nacimiento[8];
 int n_r_nacimiento;
 
-int es_primera_iter;
 double y[2];
 
 public:
