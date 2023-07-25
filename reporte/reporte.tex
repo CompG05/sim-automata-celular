@@ -23,6 +23,31 @@
 \begin{document}
 \maketitle
 
+
+\section{El Juego de la Vida de Conway}
+
+
+Los autómatas celulares son sistemas en los que autómatas simples están conectados localmente con sus autómatas vecinos. Cada uno de estos autómatas se denomina célula y tiene la capacidad de generar una salida basada en múltiples entradas, modificando su estado mediante una función de transición. Por lo general, en los autómatas celulares, el estado de una célula en una generación dada se determina únicamente por los estados de las células vecinas y su propio estado en la generación anterior.
+
+El juego de la vida es un autómata celular diseñado por John Horton Conway en 1970. El universo del Juego de la Vida consiste en una cuadrícula bidimensional compuesta por células individuales que pueden estar en dos estados: vivas o muertas. Cada célula interactúa con sus ocho vecinos más cercanos (arriba, abajo, izquierda, derecha y en diagonal). La evolución de las células ocurre en generaciones discretas, donde el estado de cada célula en una generación se determina por las reglas establecidas. Las reglas del Juego de la Vida de Conway son las siguientes: 
+
+\begin{itemize}
+  \item Si una célula está viva, puede seguir viva en la siguiente generación si tiene exactamente dos o tres vecinos vivos. 
+  \item Si una célula está viva y tiene menos de dos o más de tres vecinos vivos, morirá en la siguiente generación debido a la soledad o la superpoblación.
+  \item Si una célula está muerta, puede ``nacer'' en la siguiente generación si tiene exactamente tres vecinos vivos.
+\end{itemize}
+
+Si bien estas son las reglas originales propuestas por Conway, existen variaciones que se expresan comúnmente en formato X/Y, donde X e Y son enteros. La parte X representa las reglas de nacimiento, mientras que la parte Y representa las reglas de supervivencia. Por ejemplo, la regla 23/36 indica que una célula nacerá si tiene 2 o 3 vecinos vivos y sobrevivirá si tiene exactamente 3 o 6 vecinos vivos. En el caso del Juego de la Vida propuesto por Conway, las reglas son 3/23. En la figura~\ref{img:ej1} se muestra una posible secuencia con estas últimas reglas.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/ej1}
+  \caption{Una secuencia de estados del juego de la vida con las reglas de Conway (las casillas en negro representan células vivas).}\label{img:ej1}
+\end{figure}
+
+A medida que las generaciones avanzan, las células interactúan entre sí, creando patrones en constante cambio. Algunos patrones permanecen estables y estáticos, mientras que otros pueden moverse, girar o incluso replicarse.
+
+
 \section{Especificación DEVS}
 
 
@@ -151,7 +176,7 @@ Una célula se comunica con sus vecinas a través de sus puertos de entrada y sa
   \caption{Conexiones de una célula con sus vecinas.}\label{img:conexiones}
 \end{figure}
 
-En la figura~\ref{img:tablero} se observa un tablero completo de 4$\times$4 con las conexiones mencionadas anteriormente. Además, cada célula se comunica con un DEVs atómico `Escritor' que se encarga de escribir los resultados de una simulación en un archivo.
+En la figura~\ref{img:tablero} se observa un tablero completo de 4$\times$4 con las conexiones mencionadas anteriormente. Además, cada célula se comunica con un DEVs atómico `Escritor' que se encarga de escribir los resultados de una simulación en un archivo. Es importante establecer el orden de prioridades tal que el Escritor sea el último que realice su transición interna, para que escriba una vez que todas las células le actualizaron su estado.
 
 \begin{figure}[ht]
   \centering
@@ -167,5 +192,143 @@ Cada célula, obtiene su estado inicial, las reglas de supervivencia y nacimient
 La simulación consta de dos etapas: una de \textit{Comunicación} y una de \textit{Actualización}. En la primera, cada célula comunica su estado a las vecinas y se escribe en un archivo de salida el estado actual del tablero. En la segunda, cada una actualiza su estado.
 
 Para optimizar este proceso, se lleva una variable $vc \in Bool$ que indica si el vecindario cambió desde la última actualización. Si una célula está en la etapa de Actualización y $vc = F$ entonces no es necesario actualizar su estado, y por lo tanto tampoco es necesario comunicarlo a sus vecinas. Además, si el vecindario sí cambió ($vc = T$) pero el estado resultante es el mismo, tampoco es necesario comunicarlo. En estos casos, la célula no pasa por la etapa de Comunicación hasta que su estado cambie.
+
+
+\section{Experimentos}
+
+
+\subsection*{Patrones}
+
+En el juego de la vida de Conway, se pueden observar una amplia variedad de patrones que emergen a medida que las células interactúan entre sí y evolucionan a lo largo de las generaciones. Estos patrones pueden clasificarse en diferentes categorías, que pueden visualizarse en la sección \ref{sec:graficas}:
+
+\begin{itemize}
+  \item Patrones estáticos: (fig.~\ref{img:estatico1}-\ref{img:estatico3}) Son patrones que permanecen inalterados a medida que avanzan las generaciones. Estas configuraciones de células forman estructuras estables y no experimentan cambios en su forma o posición. Algunos ejemplos de patrones estáticos son el bloque, que consiste en un grupo de células en forma de cuadrado, y el barco, que consta de una cruz sin centro y una célula adicional en una esquina. También existen otros patrones estáticos como la canoa, la serpiente o la colmena.
+
+  \item Osciladores: (fig.~\ref{img:oscilante1}-\ref{img:oscilante4}) Son patrones que cambian periódicamente entre dos o más estados diferentes. Estos patrones oscilan entre diferentes configuraciones a medida que las generaciones avanzan, pero eventualmente vuelven a su estado inicial. Ejemplos de osciladores incluyen el intermitente, el sapo y el tocino, que alternan entre dos estados en un ciclo constante. También se encuentran otros patrones con un ciclo más largo, como el patrón gema que tiene un ciclo de 5 pasos.
+
+  \item Naves espaciales: (fig.~\ref{img:nave1}-\ref{img:nave4}) Son patrones que se mueven a través de la cuadrícula a medida que evolucionan. Estos patrones exhiben un comportamiento dinámico mientras mantienen su forma relativa. Las células individuales se desplazan y cambian de posición a medida que avanzan las generaciones. Dentro de los ejemplos de naves espaciales se encuentra el planeador, que se desplaza diagonalmente a través de una cuadrícula, así como las naves espaciales que se desplazan en línea recta, como la nave ligera, la nave de peso medio y la nave pesada.
+\end{itemize}
+
+
+\subsection*{Reglas}
+
+Ya vimos que, con las reglas de Conway (23/3), el patrón gema (fig.~\ref{img:oscilante4}) oscila en un ciclo de 5 pasos. En las figuras~\ref{img:sparks}-\ref{img:gema23-36} vemos qué sucede si cambiamos las reglas.
+
+
+\section{Aplicaciones}
+
+El Juego de la Vida es un modelo que ha sido utilizado para estudiar comportamientos complejos en sistemas dinámicos. A pesar de su simplicidad, exhibe propiedades similares a fenómenos naturales y sociales. Por ejemplo, en biología, ha sido empleado para simular el crecimiento de colonias de células y la propagación de enfermedades. En física, se ha explorado la dinámica de fluidos y el comportamiento de partículas en materiales. Además, ha sido utilizado para modelar fenómenos sociales, como la propagación de altas expectativas y optimismo entre los inversores y participantes del mercado.
+
+Teóricamente, el juego de la vida se considera Turing completo, lo que significa que es capaz de simular cualquier algoritmo computable. Esta afirmación se basa en la posibilidad de crear patrones que simulan puertas lógicas y contadores, lo que permite construir estructuras que realizan cálculos y procesos complejos. Todo esto fue demostrado por Paul Rendell, quien logró construir una máquina de Turing completamente funcional dentro del juego de la vida.
+
+Otros proyectos utilizaron patrones conocidos para recrear sistemas deterministas famosos dentro del juego, como el conocido juego Tetris o incluso replicar el propio juego de la vida dentro de una configuración del mismo. Estos proyectos reflejan aún más la versatilidad y el poder computacional teórico del juego de la vida.
+
+
+\section{Gráficas de Experimentos}\label{sec:graficas}
+
+
+% Estaticos
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/estatico1.png}
+  \caption{Ejemplo de patrón bloque replicado en todo el tablero.\label{img:estatico1}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/estatico2.png}
+  \caption{Ejemplo de patrón bote replicado cuatro veces.\label{img:estatico2}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/estatico3.png}
+  \caption{Patrones canoa, serpiente y colmena\label{img:estatico3}}
+\end{figure}
+
+
+% Osciladores
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/oscilante1.png}
+  \caption{Ejemplo de patrón intermitente.\label{img:oscilante1}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/oscilante2.png}
+  \caption{Ejemplo de patrón sapo.\label{img:oscilante2}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/oscilante3.png}
+  \caption{Ejemplo de patrón tocino.\label{img:oscilante3}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/oscilante4.png}
+  \caption{Ejemplo de patrón gema.\label{img:oscilante4}}
+\end{figure}
+
+
+% Naves espaciales
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/nave1.png}
+  \caption{Patrón Planeador. Es importante tener en cuenta que el patrón del planeador se estabiliza en un patrón bloque cuando alcanza los límites de una cuadrícula finita, lo cual no ocurriría en una cuadrícula infinita. De manera similar, en el caso de las naves espaciales, cuando estas alcanzan la pared, el patrón se rompe. Sin embargo, en una cuadrícula infinita, estas naves seguirían desplazándose hacia la derecha indefinidamente.\label{img:nave1}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/nave2.png}
+  \caption{Patrón Nave ligera.\label{img:nave2}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/nave3.png}
+  \caption{Patrón Nave de peso medio.\label{img:nave3}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/nave4.png}
+  \caption{Patrón Nave pesada.\label{img:nave4}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/sparks.png}
+  \caption{Patrón gema con regla /3 ``Sparks''. Las células se extinguen rápidamente debido a la falta de reglas de supervivencia.\label{img:sparks}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/sparks2.png}
+  \caption{Secuencia donde se extinguen las células con reglas ``\_/4''. Hay una gran cantidad de células vivas que se extinguen a medida que avanzan las generaciones.\label{img:sparks2}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/gema4-2.png}
+  \caption{Patrón gema con regla 4/2. Con estas reglas se puede ver que el ciclo se extendió de 5 a 6 pasos.\label{img:gema4-2}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/gema1357-1357.png}
+  \caption{Patrón gema con regla 1357/1357 ``Breeder''. Con estas reglas se puede ver que el ciclo se ha prolongado de 5 a 7 pasos.\label{img:gema1357-1357}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{imagenes/gema23-36.png}
+  \caption{Patrón gema con regla 23/36 ``HighLife''. Esta configuración es similar al juego de la vida de Conway, pero con la adición de una nueva regla que permite el nacimiento de células cuando tienen 6 vecinos vivos. Se puede ver que las primeras cuatro generaciones son idénticas al patrón gema con las reglas de conway, pero que en el quinto paso se rompe el ciclo original por la adición de la regla anteriormente mencionada. En este caso, el patrón deja de oscilar y se estabiliza en el paso 11.\label{img:gema23-36}}
+\end{figure}
 
 \end{document}
