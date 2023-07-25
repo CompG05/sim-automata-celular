@@ -94,10 +94,13 @@ El script permite visualizar la secuencia de estados tanto en consola como a tra
 #### Ejemplos de Visualización
 
 Mostrar los tableros con matplotlib
+    
     python imprimir_estados.py ../output/output.csv
 
 Mostrar los tableros por consola
+    
     python imprimir_estados.py ../output/output.csv -c
 
 Mostrar los tableros por consola con avance manual
+    
     python imprimir_estados.py ../output/output.csv -cm
