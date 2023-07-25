@@ -13,7 +13,7 @@ Este trabajo es una implementación en PowerDEVS del Juego de la Vida de Conway
 
 - El directorio [atomics/](atomics) contiene las definiciones de los modelos atómicos 'célula' y 'escritor'.
 - [examples/](examples) contiene modelos de tableros del juego de la vida de diferentes dimensiones.
-- [patrones/](patrones) contiene archivos con estados iniciales de diferentes patrones.
+- [patrones/](patrones) contiene archivos con configuraciones iniciales de diferentes patrones.
 - [Vida.pdl](Vida.pdl) es una librería que puede ser incorporada a PowerDEVS y contiene los modelos atómicos y modelos acoplados con tableros de diferentes dimensiones.
 - [imprimir_estados.py](imprimir_estados.py) y [setup.sh](setup.sh) son scripts útiles.
 
@@ -58,6 +58,10 @@ Notar que las dimensiones del archivo deben coincidir con las del modelo a utili
     23
     3
     0.5
+
+#### Patrones
+El directorio [patrones/](patrones) contiene archivos de configuración inicial de diferentes patrones. Para utilizarlos se deben copiar reemplazando al archivo [estado.txt](estado.txt). Por ejemplo:
+    cp patrones/8x8/naves/nave_ligera.txt estado.txt
 
 ### Salida producida
 
